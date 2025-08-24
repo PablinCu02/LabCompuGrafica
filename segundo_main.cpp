@@ -3,6 +3,9 @@
 #include <glew.h>
 #include <glfw3.h>
 
+#include <cstdlib>
+#include <ctime>
+
 //Dimensiones de la ventana
 const int WIDTH = 800, HEIGHT = 800;
 GLuint VAO, VBO, shader;
