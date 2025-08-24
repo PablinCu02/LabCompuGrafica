@@ -201,6 +201,8 @@ int main()
 			cambioColor = t; //Actualizar el tiempo
 		}
 
+		glClearColor(red, green, blue, 1.0f); //Cambiar el color de la ventana
+
 		//Limpiar la ventana
 		glClear(GL_COLOR_BUFFER_BIT);
 
