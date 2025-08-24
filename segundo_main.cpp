@@ -148,6 +148,26 @@ void crearIniciales() {
 		// 2 triangulos para la barra lateral derecha inferior
 		-0.50f,  0.20f, 0.0f,   -0.45f,  0.20f, 0.0f,   -0.45f,  0.15f, 0.0f,
 		-0.50f,  0.20f, 0.0f,   -0.45f,  0.15f, 0.0f,   -0.50f,  0.15f, 0.0f,
+
+
+		// --- A ---
+		// 2 triángulos para la pierna izquierda
+		-0.15f,  0.60f, 0.0f,   -0.10f,  0.60f, 0.0f,   -0.10f, -0.60f, 0.0f,
+		-0.15f,  0.60f, 0.0f,   -0.10f, -0.60f, 0.0f,   -0.15f, -0.60f, 0.0f,
+
+		// 2 triángulos para la pierna derecha
+		 0.10f,  0.60f, 0.0f,    0.15f,  0.60f, 0.0f,    0.15f, -0.60f, 0.0f,
+		 0.10f,  0.60f, 0.0f,    0.15f, -0.60f, 0.0f,    0.10f, -0.60f, 0.0f,
+
+		 // 2 triángulos para la barra horizontal superior
+		 -0.15f,  0.60f, 0.0f,    0.15f,  0.60f, 0.0f,    0.15f,  0.50f, 0.0f,
+		 -0.15f,  0.60f, 0.0f,    0.15f,  0.50f, 0.0f,   -0.15f,  0.50f, 0.0f,
+
+		 // 2 triángulos para la barra horizontal del medio
+		 -0.10f,  0.05f, 0.0f,    0.10f,  0.05f, 0.0f,    0.10f, -0.05f, 0.0f,
+		 -0.10f,  0.05f, 0.0f,    0.10f, -0.05f, 0.0f,   -0.10f, -0.05f, 0.0f,
+
+
 	};
 	glGenVertexArrays(1, &VAO);
 	glBindVertexArray(VAO);
@@ -247,7 +267,7 @@ int main()
 		glUseProgram(shader);
 
 		glBindVertexArray(VAO);
-		glDrawArrays(GL_TRIANGLES, 0, 30); // 12 vértices (el cuadrado y el rombo)
+		glDrawArrays(GL_TRIANGLES, 0, 54); // 12 vértices (el cuadrado y el rombo)
 		glBindVertexArray(0);
 
 		glUseProgram(0);
