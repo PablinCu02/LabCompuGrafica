@@ -129,6 +129,10 @@ void CompileShaders() {
 
 int main()
 {
+	srand(time(0));//Semilla para la randomización
+	double cambioColor = 0.0; //Variable para el cambio de color
+	float red = 0.0f, green = 0.0f, blue = 0.0f; //Variables para los colores
+
 	//Inicialización de GLFW
 	if (!glfwInit())
 	{
@@ -188,19 +192,13 @@ int main()
 		//Recibir eventos del usuario
 		glfwPollEvents();
 
-
-		double t = glfwGetTime();   // tiempo en segundos
-		int segundos = (int)t;      // convertir a entero
-
-		//Usamos modulo 3 para "randomizar" lo colores
-		if (segundos % 3 == 0) {
-			glClearColor(1.0f, 0.0f, 0.0f, 1.0f); // Pantalla Roja
-		}
-		else if (segundos % 3 == 1) {
-			glClearColor(0.0f, 1.0f, 0.0f, 1.0f); // Pantalla Verde
-		}
-		else {
-			glClearColor(0.0f, 0.0f, 1.0f, 1.0f); // Pantalla Azul
+		double t = glfwGetTime();//tiempo en segundos 
+		if (t - cambioColor >= 2.0) //si ya pasaron 2 segundos
+		{
+			red = (rand() % 101) / 100.0f; //Números aleatorios entre 0 y 1
+			green = (rand() % 101) / 100.0f;
+			blue = (rand() % 101) / 100.0f;
+			cambioColor = t; //Actualizar el tiempo
 		}
 
 		//Limpiar la ventana
