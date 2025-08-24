@@ -128,47 +128,76 @@ void CompileShaders() {
 
 void crearIniciales() {
 	GLfloat vertices[] = {
-		//Letra P
-		// 2 triangulos para la barra vertical izq
+
+		// LETRA P
+
+		// 2 triángulos para la barra vertical izquierda
 		-0.75f,  0.60f, 0.0f,   -0.70f,  0.60f, 0.0f,   -0.70f, -0.60f, 0.0f,
 		-0.75f,  0.60f, 0.0f,   -0.70f, -0.60f, 0.0f,   -0.75f, -0.60f, 0.0f,
 
-		// 2 triangulos para la barra superior 
+		// 2 triángulos para la barra horizontal superior
 		-0.75f,  0.60f, 0.0f,   -0.45f,  0.60f, 0.0f,   -0.45f,  0.50f, 0.0f,
 		-0.75f,  0.60f, 0.0f,   -0.45f,  0.50f, 0.0f,   -0.75f,  0.50f, 0.0f,
 
-		// 2 triangulos para la barra lateral derecha superior
+		// 2 triángulos para el lateral derecho superior
 		-0.50f,  0.60f, 0.0f,   -0.45f,  0.60f, 0.0f,   -0.45f,  0.20f, 0.0f,
 		-0.50f,  0.60f, 0.0f,   -0.45f,  0.20f, 0.0f,   -0.50f,  0.20f, 0.0f,
 
-		// 2 triangulos para la barra horizontal del medio
+		// 2 triángulos para la barra horizontal del medio
 		-0.75f,  0.25f, 0.0f,   -0.50f,  0.25f, 0.0f,   -0.50f,  0.15f, 0.0f,
 		-0.75f,  0.25f, 0.0f,   -0.50f,  0.15f, 0.0f,   -0.75f,  0.15f, 0.0f,
 
-		// 2 triangulos para la barra lateral derecha inferior
+		// 2 triángulos para el lateral derecho inferior (cerrar la panza)
 		-0.50f,  0.20f, 0.0f,   -0.45f,  0.20f, 0.0f,   -0.45f,  0.15f, 0.0f,
 		-0.50f,  0.20f, 0.0f,   -0.45f,  0.15f, 0.0f,   -0.50f,  0.15f, 0.0f,
 
 
-		// --- A ---
+		// LETRA A  
+
 		// 2 triángulos para la pierna izquierda
 		-0.15f,  0.60f, 0.0f,   -0.10f,  0.60f, 0.0f,   -0.10f, -0.60f, 0.0f,
 		-0.15f,  0.60f, 0.0f,   -0.10f, -0.60f, 0.0f,   -0.15f, -0.60f, 0.0f,
 
 		// 2 triángulos para la pierna derecha
-		 0.10f,  0.60f, 0.0f,    0.15f,  0.60f, 0.0f,    0.15f, -0.60f, 0.0f,
-		 0.10f,  0.60f, 0.0f,    0.15f, -0.60f, 0.0f,    0.10f, -0.60f, 0.0f,
+		0.10f,  0.60f, 0.0f,    0.15f,  0.60f, 0.0f,    0.15f, -0.60f, 0.0f,
+		0.10f,  0.60f, 0.0f,    0.15f, -0.60f, 0.0f,    0.10f, -0.60f, 0.0f,
 
-		 // 2 triángulos para la barra horizontal superior
-		 -0.15f,  0.60f, 0.0f,    0.15f,  0.60f, 0.0f,    0.15f,  0.50f, 0.0f,
-		 -0.15f,  0.60f, 0.0f,    0.15f,  0.50f, 0.0f,   -0.15f,  0.50f, 0.0f,
+		// 2 triángulos para la barra horizontal superior
+		-0.15f,  0.60f, 0.0f,    0.15f,  0.60f, 0.0f,    0.15f,  0.50f, 0.0f,
+		-0.15f,  0.60f, 0.0f,    0.15f,  0.50f, 0.0f,   -0.15f,  0.50f, 0.0f,
 
-		 // 2 triángulos para la barra horizontal del medio
-		 -0.10f,  0.05f, 0.0f,    0.10f,  0.05f, 0.0f,    0.10f, -0.05f, 0.0f,
-		 -0.10f,  0.05f, 0.0f,    0.10f, -0.05f, 0.0f,   -0.10f, -0.05f, 0.0f,
+		// 2 triángulos para la barra horizontal del medio
+		-0.10f,  0.05f, 0.0f,    0.10f,  0.05f, 0.0f,    0.10f, -0.05f, 0.0f,
+		-0.10f,  0.05f, 0.0f,    0.10f, -0.05f, 0.0f,   -0.10f, -0.05f, 0.0f,
+
+		// 2 triángulos para la barra vertical izquierda
+		0.45f,  0.60f, 0.0f,    0.50f,  0.60f, 0.0f,    0.50f, -0.60f, 0.0f,
+		0.45f,  0.60f, 0.0f,    0.50f, -0.60f, 0.0f,    0.45f, -0.60f, 0.0f,
 
 
+		// LETRA B
+		
+		// 2 triángulos para la barra horizontal superior
+		0.45f,  0.60f, 0.0f,    0.75f,  0.60f, 0.0f,    0.75f,  0.50f, 0.0f,
+		0.45f,  0.60f, 0.0f,    0.75f,  0.50f, 0.0f,    0.45f,  0.50f, 0.0f,
+
+		// 2 triángulos para el lateral derecho superior (panza arriba)
+		0.70f,  0.60f, 0.0f,    0.75f,  0.60f, 0.0f,    0.75f,  0.20f, 0.0f,
+		0.70f,  0.60f, 0.0f,    0.75f,  0.20f, 0.0f,    0.70f,  0.20f, 0.0f,
+
+		// 2 triángulos para la barra horizontal del medio (EXTENDIDA a x = 0.75)
+		0.45f,  0.20f, 0.0f,    0.75f,  0.20f, 0.0f,    0.75f,  0.10f, 0.0f,
+		0.45f,  0.20f, 0.0f,    0.75f,  0.10f, 0.0f,    0.45f,  0.10f, 0.0f,
+
+		// 2 triángulos para la barra horizontal inferior
+		0.45f, -0.50f, 0.0f,    0.75f, -0.50f, 0.0f,    0.75f, -0.60f, 0.0f,
+		0.45f, -0.50f, 0.0f,    0.75f, -0.60f, 0.0f,    0.45f, -0.60f, 0.0f,
+
+		// 2 triángulos para el lateral derecho inferior (SUBIDO hasta y = 0.10)
+		0.70f,  0.10f, 0.0f,    0.75f,  0.10f, 0.0f,    0.75f, -0.60f, 0.0f,
+		0.70f,  0.10f, 0.0f,    0.75f, -0.60f, 0.0f,    0.70f, -0.60f, 0.0f,
 	};
+
 	glGenVertexArrays(1, &VAO);
 	glBindVertexArray(VAO);
 
@@ -176,13 +205,14 @@ void crearIniciales() {
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-	// ¡Usa sizeof(GLfloat)!
+	// ¡Importante! sizeof(GLfloat), no sizeof(GL_FLOAT)
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), (GLvoid*)0);
 	glEnableVertexAttribArray(0);
 
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindVertexArray(0);
 }
+
 
 int main()
 {
@@ -267,7 +297,7 @@ int main()
 		glUseProgram(shader);
 
 		glBindVertexArray(VAO);
-		glDrawArrays(GL_TRIANGLES, 0, 54); // 12 vértices (el cuadrado y el rombo)
+		glDrawArrays(GL_TRIANGLES, 0, 96); // 12 vértices (el cuadrado y el rombo)
 		glBindVertexArray(0);
 
 		glUseProgram(0);
