@@ -32,7 +32,7 @@ void main()											\n\
 }";
 
 
-// --- NUEVA FUNCI”N: crear cuadrado y rombo ---
+// --- NUEVA FUNCI√ìN: crear cuadrado y rombo ---
 void CrearFiguras()
 {
 	GLfloat vertices[] = {
@@ -60,17 +60,17 @@ void CrearFiguras()
 
 	glGenBuffers(1, &VBO);
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW); //pasarle los datos al VBO asignando tamano, los datos y en este caso es est·tico pues no se modificar·n los valores
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW); //pasarle los datos al VBO asignando tamano, los datos y en este caso es est√°tico pues no se modificar√°n los valores
 
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GL_FLOAT), (GLvoid*)0);//Stride en caso de haber datos de color por ejemplo, es saltar cierta cantidad de datos
 	glEnableVertexAttribArray(0);
-	//agregar valores a vËrtices y luego declarar un nuevo vertexAttribPointer
+	//agregar valores a v√®rtices y luego declarar un nuevo vertexAttribPointer
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glBindVertexArray(0);
 }
 
 
-void AddShader(GLuint theProgram, const char* shaderCode, GLenum shaderType) //FunciÛn para agregar los shaders a la tarjeta gr·fica
+void AddShader(GLuint theProgram, const char* shaderCode, GLenum shaderType) //Funci√≥n para agregar los shaders a la tarjeta gr√°fica
 
 //the Program recibe los datos de theShader
 
@@ -80,11 +80,11 @@ void AddShader(GLuint theProgram, const char* shaderCode, GLenum shaderType) //F
 	theCode[0] = shaderCode;//shaderCode es el texto que se le pasa a theCode
 	GLint codeLength[1];
 	codeLength[0] = strlen(shaderCode);//longitud del texto
-	glShaderSource(theShader, 1, theCode, codeLength);//Se le asigna al shader el cÛdigo
+	glShaderSource(theShader, 1, theCode, codeLength);//Se le asigna al shader el c√≥digo
 	glCompileShader(theShader);//Se comila el shader
 	GLint result = 0;
 	GLchar eLog[1024] = { 0 };
-	//verificaciones y prevenciÛn de errores
+	//verificaciones y prevenci√≥n de errores
 	glGetShaderiv(theShader, GL_COMPILE_STATUS, &result);
 	if (!result)
 	{
@@ -92,7 +92,7 @@ void AddShader(GLuint theProgram, const char* shaderCode, GLenum shaderType) //F
 		printf("EL error al compilar el shader %d es: %s \n", shaderType, eLog);
 		return;
 	}
-	glAttachShader(theProgram, theShader);//Si no hubo problemas se asigna el shader a theProgram el cual asigna el cÛdigo a la tarjeta gr·fica
+	glAttachShader(theProgram, theShader);//Si no hubo problemas se asigna el shader a theProgram el cual asigna el c√≥digo a la tarjeta gr√°fica
 }
 
 void CompileShaders() {
@@ -107,8 +107,8 @@ void CompileShaders() {
 	//Para terminar de linkear el programa y ver que no tengamos errores
 	GLint result = 0;
 	GLchar eLog[1024] = { 0 };
-	glLinkProgram(shader);//se linkean los shaders a la tarjeta gr·fica
-	//verificaciones y prevenciÛn de errores
+	glLinkProgram(shader);//se linkean los shaders a la tarjeta gr√°fica
+	//verificaciones y prevenci√≥n de errores
 	glGetProgramiv(shader, GL_LINK_STATUS, &result);
 	if (!result)
 	{
@@ -131,69 +131,69 @@ void crearIniciales() {
 
 		// LETRA P
 
-		// 2 tri·ngulos para la barra vertical izquierda
+		// 2 tri√°ngulos para la barra vertical izquierda
 		-0.75f,  0.60f, 0.0f,   -0.70f,  0.60f, 0.0f,   -0.70f, -0.60f, 0.0f,
 		-0.75f,  0.60f, 0.0f,   -0.70f, -0.60f, 0.0f,   -0.75f, -0.60f, 0.0f,
 
-		// 2 tri·ngulos para la barra horizontal superior
+		// 2 tri√°ngulos para la barra horizontal superior
 		-0.75f,  0.60f, 0.0f,   -0.45f,  0.60f, 0.0f,   -0.45f,  0.50f, 0.0f,
 		-0.75f,  0.60f, 0.0f,   -0.45f,  0.50f, 0.0f,   -0.75f,  0.50f, 0.0f,
 
-		// 2 tri·ngulos para el lateral derecho superior
+		// 2 tri√°ngulos para el lateral derecho superior
 		-0.50f,  0.60f, 0.0f,   -0.45f,  0.60f, 0.0f,   -0.45f,  0.20f, 0.0f,
 		-0.50f,  0.60f, 0.0f,   -0.45f,  0.20f, 0.0f,   -0.50f,  0.20f, 0.0f,
 
-		// 2 tri·ngulos para la barra horizontal del medio
+		// 2 tri√°ngulos para la barra horizontal del medio
 		-0.75f,  0.25f, 0.0f,   -0.50f,  0.25f, 0.0f,   -0.50f,  0.15f, 0.0f,
 		-0.75f,  0.25f, 0.0f,   -0.50f,  0.15f, 0.0f,   -0.75f,  0.15f, 0.0f,
 
-		// 2 tri·ngulos para el lateral derecho inferior (cerrar la panza)
+		// 2 tri√°ngulos para el lateral derecho inferior (cerrar la panza)
 		-0.50f,  0.20f, 0.0f,   -0.45f,  0.20f, 0.0f,   -0.45f,  0.15f, 0.0f,
 		-0.50f,  0.20f, 0.0f,   -0.45f,  0.15f, 0.0f,   -0.50f,  0.15f, 0.0f,
 
 
 		// LETRA A  
 
-		// 2 tri·ngulos para la pierna izquierda
+		// 2 tri√°ngulos para la pierna izquierda
 		-0.15f,  0.60f, 0.0f,   -0.10f,  0.60f, 0.0f,   -0.10f, -0.60f, 0.0f,
 		-0.15f,  0.60f, 0.0f,   -0.10f, -0.60f, 0.0f,   -0.15f, -0.60f, 0.0f,
 
-		// 2 tri·ngulos para la pierna derecha
+		// 2 tri√°ngulos para la pierna derecha
 		0.10f,  0.60f, 0.0f,    0.15f,  0.60f, 0.0f,    0.15f, -0.60f, 0.0f,
 		0.10f,  0.60f, 0.0f,    0.15f, -0.60f, 0.0f,    0.10f, -0.60f, 0.0f,
 
-		// 2 tri·ngulos para la barra horizontal superior
+		// 2 tri√°ngulos para la barra horizontal superior
 		-0.15f,  0.60f, 0.0f,    0.15f,  0.60f, 0.0f,    0.15f,  0.50f, 0.0f,
 		-0.15f,  0.60f, 0.0f,    0.15f,  0.50f, 0.0f,   -0.15f,  0.50f, 0.0f,
 
-		// 2 tri·ngulos para la barra horizontal del medio
+		// 2 tri√°ngulos para la barra horizontal del medio
 		-0.10f,  0.05f, 0.0f,    0.10f,  0.05f, 0.0f,    0.10f, -0.05f, 0.0f,
 		-0.10f,  0.05f, 0.0f,    0.10f, -0.05f, 0.0f,   -0.10f, -0.05f, 0.0f,
 
-		// 2 tri·ngulos para la barra vertical izquierda
+		// 2 tri√°ngulos para la barra vertical izquierda
 		0.45f,  0.60f, 0.0f,    0.50f,  0.60f, 0.0f,    0.50f, -0.60f, 0.0f,
 		0.45f,  0.60f, 0.0f,    0.50f, -0.60f, 0.0f,    0.45f, -0.60f, 0.0f,
 
 
 		// LETRA B
 		
-		// 2 tri·ngulos para la barra horizontal superior
+		// 2 tri√°ngulos para la barra horizontal superior
 		0.45f,  0.60f, 0.0f,    0.75f,  0.60f, 0.0f,    0.75f,  0.50f, 0.0f,
 		0.45f,  0.60f, 0.0f,    0.75f,  0.50f, 0.0f,    0.45f,  0.50f, 0.0f,
 
-		// 2 tri·ngulos para el lateral derecho superior (panza arriba)
+		// 2 tri√°ngulos para el lateral derecho superior (panza arriba)
 		0.70f,  0.60f, 0.0f,    0.75f,  0.60f, 0.0f,    0.75f,  0.20f, 0.0f,
 		0.70f,  0.60f, 0.0f,    0.75f,  0.20f, 0.0f,    0.70f,  0.20f, 0.0f,
 
-		// 2 tri·ngulos para la barra horizontal del medio (EXTENDIDA a x = 0.75)
+		// 2 tri√°ngulos para la barra horizontal del medio (EXTENDIDA a x = 0.75)
 		0.45f,  0.20f, 0.0f,    0.75f,  0.20f, 0.0f,    0.75f,  0.10f, 0.0f,
 		0.45f,  0.20f, 0.0f,    0.75f,  0.10f, 0.0f,    0.45f,  0.10f, 0.0f,
 
-		// 2 tri·ngulos para la barra horizontal inferior
+		// 2 tri√°ngulos para la barra horizontal inferior
 		0.45f, -0.50f, 0.0f,    0.75f, -0.50f, 0.0f,    0.75f, -0.60f, 0.0f,
 		0.45f, -0.50f, 0.0f,    0.75f, -0.60f, 0.0f,    0.45f, -0.60f, 0.0f,
 
-		// 2 tri·ngulos para el lateral derecho inferior (SUBIDO hasta y = 0.10)
+		// 2 tri√°ngulos para el lateral derecho inferior (SUBIDO hasta y = 0.10)
 		0.70f,  0.10f, 0.0f,    0.75f,  0.10f, 0.0f,    0.75f, -0.60f, 0.0f,
 		0.70f,  0.10f, 0.0f,    0.75f, -0.60f, 0.0f,    0.70f, -0.60f, 0.0f,
 	};
@@ -205,7 +205,7 @@ void crearIniciales() {
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
-	// °Importante! sizeof(GLfloat), no sizeof(GL_FLOAT)
+	// ¬°Importante! sizeof(GLfloat), no sizeof(GL_FLOAT)
 	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), (GLvoid*)0);
 	glEnableVertexAttribArray(0);
 
@@ -216,19 +216,19 @@ void crearIniciales() {
 
 int main()
 {
-	srand(time(0));//Semilla para la randomizaciÛn
+	srand(time(0));//Semilla para la randomizaci√≥n
 	double cambioColor = 0.0; //Variable para el cambio de color
 	float red = 0.0f, green = 0.0f, blue = 0.0f; //Variables para los colores
 
-	//InicializaciÛn de GLFW
+	//Inicializaci√≥n de GLFW
 	if (!glfwInit())
 	{
-		printf("FallÛ inicializar GLFW");
+		printf("Fall√≥ inicializar GLFW");
 		glfwTerminate();
 		return 1;
 	}
 
-	//****  LAS SIGUIENTES 4 LÕNEAS SE COMENTAN EN DADO CASO DE QUE AL USUARIO NO LE FUNCIONE LA VENTANA Y PUEDA CONOCER LA VERSI”N DE OPENGL QUE TIENE ****/
+	//****  LAS SIGUIENTES 4 L√çNEAS SE COMENTAN EN DADO CASO DE QUE AL USUARIO NO LE FUNCIONE LA VENTANA Y PUEDA CONOCER LA VERSI√ìN DE OPENGL QUE TIENE ****/
 
 	//Asignando variables de GLFW y propiedades de ventana
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
@@ -246,7 +246,7 @@ int main()
 		glfwTerminate();
 		return 1;
 	}
-	//Obtener tamaÒo de Buffer
+	//Obtener tama√±o de Buffer
 	int BufferWidth, BufferHeight;
 	glfwGetFramebufferSize(mainWindow, &BufferWidth, &BufferHeight);
 
@@ -258,7 +258,7 @@ int main()
 
 	if (glewInit() != GLEW_OK)
 	{
-		printf("FallÛ inicializaciÛn de GLEW");
+		printf("Fall√≥ inicializaci√≥n de GLEW");
 		glfwDestroyWindow(mainWindow);
 		glfwTerminate();
 		return 1;
@@ -283,7 +283,7 @@ int main()
 		double t = glfwGetTime();//tiempo en segundos 
 		if (t - cambioColor >= 2.0) //si ya pasaron 2 segundos
 		{
-			red = (rand() % 101) / 100.0f; //N˙meros aleatorios entre 0 y 1
+			red = (rand() % 101) / 100.0f; //N√∫meros aleatorios entre 0 y 1
 			green = (rand() % 101) / 100.0f;
 			blue = (rand() % 101) / 100.0f;
 			cambioColor = t; //Actualizar el tiempo
@@ -297,14 +297,14 @@ int main()
 		glUseProgram(shader);
 
 		glBindVertexArray(VAO);
-		glDrawArrays(GL_TRIANGLES, 0, 96); // 12 vÈrtices (el cuadrado y el rombo)
+		glDrawArrays(GL_TRIANGLES, 0, 96); // 12 v√©rtices (el cuadrado y el rombo)
 		glBindVertexArray(0);
 
 		glUseProgram(0);
 
 		glfwSwapBuffers(mainWindow);
 
-		//NO ESCRIBIR NINGUNA LÕNEA DESPU…S DE glfwSwapBuffers(mainWindow); 
+		//NO ESCRIBIR NINGUNA L√çNEA DESPU√âS DE glfwSwapBuffers(mainWindow); 
 	}
 	return 0;
 }
