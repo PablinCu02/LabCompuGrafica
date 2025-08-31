@@ -1,0 +1,9 @@
+﻿  practica2.cpp
+C:\Users\Pablo\Documents\Practica2\Practica2\Practica2\Window.h(12,36): warning C4244: 'return': conversion from 'GLint' to 'GLfloat', possible loss of data
+  (compiling source file 'practica2.cpp')
+  
+C:\Users\Pablo\Documents\Practica2\Practica2\Practica2\Window.h(13,37): warning C4244: 'return': conversion from 'GLint' to 'GLfloat', possible loss of data
+  (compiling source file 'practica2.cpp')
+  
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Practica2.vcxproj -> C:\Users\Pablo\Documents\Practica2\Practica2\Debug\Practica2.exe
